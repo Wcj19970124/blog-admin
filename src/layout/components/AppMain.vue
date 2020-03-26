@@ -7,11 +7,22 @@
 </template>
 
 <script>
+import typeApi from '@/api/type'
 export default {
   name: 'AppMain',
   computed: {
     key() {
       return this.$route.path
+    }
+  },
+  created() {
+    this.getTypeList()
+  },
+  methods: {
+    getTypeList() {
+      typeApi.listFront().then(res => {
+        this.$store.commit('global/SET_TYPE', res.data)
+      })
     }
   }
 }

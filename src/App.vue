@@ -9,3 +9,8 @@ export default {
   name: 'App'
 }
 </script>
+<style>
+.add-button{
+  margin-bottom: 15px;
+}
+</style>
