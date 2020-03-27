@@ -72,6 +72,10 @@ export default {
     }
   },
   watch: {
+    id(val) {
+      this.$nextTick(() =>
+        window.tinymce.get(this.tinymceId).setContent(this.value || ''))
+    },
     value(val) {
       if (!this.hasChange && this.hasInit) {
         this.$nextTick(() =>

@@ -27,7 +27,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="内容" prop="blogContent">
-        <tinymce v-model="blog.blogContent" />
+        <tinymce :id="blog.blogId" v-model="blog.blogContent" />
       </el-form-item>
       <el-form-item label="备注" prop="blogRemark">
         <el-input v-model="blog.blogRemark" type="textarea" />
@@ -42,7 +42,7 @@
 
 <script>
 import blogApi from '@/api/blog'
-import Tinymce from '@/components/Tinymce'
+import Tinymce from '@/components/Tinymce/index'
 import { getToken } from '../../../utils/auth'
 export default {
   components: {
@@ -78,15 +78,11 @@ export default {
         this.$message.success(res.msg)
         this.$emit('closeUpdateDialog')
         this.$emit('getBlogList')
-        // 清空表单
-        this.$refs['form'].resetFields()
       })
     },
     // 关闭对话框
     closeDialog() {
       this.$emit('closeUpdateDialog')
-      // 清空表单
-      this.$refs['form'].resetFields()
     },
     // 上传文件成功获取其上传路径
     handleAvatarSuccess(res, file) {

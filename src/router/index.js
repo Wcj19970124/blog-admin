@@ -60,7 +60,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/blog/blog',
     name: 'BlogManage',
-    meta: { title: '博客管理', icon: 'example' },
+    meta: { title: '帖子管理', icon: 'example' },
     children: [
       {
         path: 'type',
@@ -73,6 +73,12 @@ export const constantRoutes = [
         name: 'Blog',
         component: () => import('@/views/blog/blog/blog-list'),
         meta: { title: '博客管理', icon: 'table' }
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('@/views/blog/about/about-list'),
+        meta: { title: '关于我的', icon: 'table' }
       }
     ]
   },

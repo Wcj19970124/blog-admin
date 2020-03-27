@@ -7,7 +7,7 @@
       <el-table-column prop="typeId" label="编号" />
       <el-table-column prop="typeName" label="类型名称" />
       <el-table-column prop="typeBlogCount" label="博客数" />
-      <el-table-column prop="enable" label="是否启用">
+      <el-table-column prop="enable" label="状态">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.enable === 1" type="success">启用</el-tag>
           <el-tag v-else type="info">弃用</el-tag>

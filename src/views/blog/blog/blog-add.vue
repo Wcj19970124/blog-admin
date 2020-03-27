@@ -42,7 +42,7 @@
 
 <script>
 import blogApi from '@/api/blog'
-import Tinymce from '@/components/Tinymce'
+import Tinymce from '@/components/Tinymce/index'
 import { getToken } from '../../../utils/auth'
 export default {
   components: {
