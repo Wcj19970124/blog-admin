@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form ref="form" :model="type" label-width="80px">
+    <el-form ref="form" :model="type" label-width="80px" size="mini">
       <el-form-item label="类型名称">
         <el-input v-model="type.typeName" />
       </el-form-item>

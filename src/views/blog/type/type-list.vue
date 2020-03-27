@@ -1,7 +1,7 @@
 <template>
   <div style="margin:15px">
     <!-- 添加类型按钮 -->
-    <el-button type="primary" size="mini" class="add-button" @click="openAddDrawer">添加</el-button>
+    <el-button type="primary" size="mini" class="add-button" icon="el-icon-plus" @click="openAddDrawer">添加</el-button>
     <!-- 后台类型列表 -->
     <el-table :data="typeList" border style="width: 100%">
       <el-table-column prop="typeId" label="编号" />
@@ -23,16 +23,16 @@
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <el-button size="mini" type="primary" @click="handleEdit(scope.row.typeId)">编辑</el-button>
+                <el-button size="mini" type="primary" icon="el-icon-edit" @click="handleEdit(scope.row.typeId)">编辑</el-button>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-button size="mini" type="danger" @click="handleDelete(scope.row.typeId)">删除</el-button>
+                <el-button size="mini" type="danger" icon="el-icon-delete" @click="handleDelete(scope.row.typeId)">删除</el-button>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-button v-if="scope.row.enable === 0" size="mini" type="success" @click="enable(scope.row.typeId)">启用</el-button>
+                <el-button v-if="scope.row.enable === 0" icon="el-icon-circle-check" size="mini" type="success" @click="enable(scope.row.typeId)">启用</el-button>
               </el-dropdown-item>
               <el-dropdown-item>
-                <el-button v-if="scope.row.enable === 1" size="mini" type="warning" @click="disable(scope.row.typeId)">弃用</el-button>
+                <el-button v-if="scope.row.enable === 1" icon="el-icon-circle-close" size="mini" type="warning" @click="disable(scope.row.typeId)">弃用</el-button>
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>

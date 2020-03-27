@@ -8,7 +8,7 @@ export default {
       data: blog
     })
   },
-  getType(id) { // 根据id查询博客
+  getBlog(id) { // 根据id查询博客
     return request({
       url: `/${group_name}/getBlog/${id}`,
       method: 'get'

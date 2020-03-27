@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form ref="form" :model="type" label-width="80px">
+    <el-form ref="form" :model="type" label-width="80px" size="mini">
       <el-form-item label="类型名称">
         <el-input v-model="type.typeName" />
       </el-form-item>
@@ -26,6 +26,8 @@ export default {
         this.$message.success(res.msg)
         this.$emit('closeAddDrawer')
         this.$emit('getTypeList')
+        // 清空表单内容
+        this.$$refs['form'].resetFields()
       })
     },
     closeDialog() {
