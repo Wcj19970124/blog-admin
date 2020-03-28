@@ -45,17 +45,13 @@ const actions = {
   // get user info
   getInfo({ commit }) {
     return new Promise((resolve, reject) => {
-      getInfo().then(response => {
-        const { data } = response
+      getInfo().then(res => {
+        const { data } = res
 
-        if (!data) {
-          reject('Verification failed, please Login again.')
-        }
-
-        const { name, avatar } = data
-
+        const { name, header } = data
+        console.log(data)
         commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
+        commit('SET_AVATAR', header)
         resolve(data)
       }).catch(error => {
         reject(error)
