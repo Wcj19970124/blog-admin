@@ -48,7 +48,7 @@
             </el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <el-button size="mini" type="success" icon="el-icon-delete" @click="handleSee(scope.row.blogId)">查看</el-button>
+                <el-button size="mini" type="success" icon="el-icon-reading" @click="handleSee(scope.row.blogId)">查看</el-button>
               </el-dropdown-item>
               <el-dropdown-item>
                 <el-button size="mini" type="primary" icon="el-icon-edit" @click="handleEdit(scope.row.blogId)">编辑</el-button>
@@ -137,7 +137,7 @@ export default {
         type: 'error'
       }).then(() => {
         blogApi.delete(id).then(res => {
-          this.$message.success('删除成功!')
+          this.$message.success(res.msg)
           this.getBlogList()
         })
       })

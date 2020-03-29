@@ -13,6 +13,7 @@ export default {
 <style>
 .add-button{
   margin-bottom: 15px;
+  margin-right: 10px;
 }
 .pagination{
   margin-top: 15px;

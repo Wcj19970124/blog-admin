@@ -103,6 +103,33 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/system/system',
+    name: 'SystemManage',
+    meta: { title: '系统管理', icon: 'example' },
+    children: [
+      {
+        path: 'log',
+        name: 'Log',
+        component: () => import('@/views/system/log/log-list'),
+        meta: { title: '日志管理', icon: 'table' }
+      },
+      {
+        path: 'music',
+        name: 'Music',
+        component: () => import('@/views/system/music/music-list'),
+        meta: { title: '音乐管理', icon: 'table' }
+      },
+      {
+        path: 'link',
+        name: 'Link',
+        component: () => import('@/views/system/link/link-list'),
+        meta: { title: '友情链接', icon: 'table' }
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
